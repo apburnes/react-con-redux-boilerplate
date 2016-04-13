@@ -1,11 +1,11 @@
-import expect from 'expect';
+import { expect } from 'chai';
 import homeReducer from '../src/js/reducers/homeReducer';
 import * as constants from '../src/js/constants/AppConstants';
 
 describe('defaultReducer', () => {
 
   it('should return the initial state', () => {
-    expect(homeReducer(undefined, {})).toEqual({
+    expect(homeReducer(undefined, {})).to.eql({
       projectName: 'React.js Boilerplate',
       ownerName: 'mxstbr'
     });
@@ -20,7 +20,7 @@ describe('defaultReducer', () => {
         type: constants.CHANGE_OWNER_NAME,
         name
       })
-    ).toEqual({
+    ).to.eql({
       ownerName: name
     });
   });
@@ -34,7 +34,7 @@ describe('defaultReducer', () => {
         type: constants.CHANGE_PROJECT_NAME,
         name
       })
-    ).toEqual({
+    ).to.eql({
       projectName: name
     });
   });

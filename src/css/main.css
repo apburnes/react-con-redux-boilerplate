@@ -4,6 +4,7 @@
 
 /* 1. Vendors */
 @import 'vendor/*.css';
+@import '../../node_modules/basscss/css/basscss.min.css';
 
 /* 2. Configuration and helpers */
 @import 'utils/*.css';

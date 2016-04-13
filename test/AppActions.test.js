@@ -1,4 +1,4 @@
-import expect from 'expect';
+import { expect } from 'chai';
 import { changeOwnerName, changeProjectName } from '../src/js/actions/AppActions';
 import { CHANGE_OWNER_NAME, CHANGE_PROJECT_NAME } from '../src/js/constants/AppConstants';
 
@@ -11,7 +11,7 @@ describe('AppActions', () => {
         name
       };
 
-      expect(changeOwnerName(name)).toEqual(expectedResult);
+      expect(changeOwnerName(name)).to.eql(expectedResult);
     });
   });
 
@@ -23,7 +23,7 @@ describe('AppActions', () => {
         name
       };
 
-      expect(changeProjectName(name)).toEqual(expectedResult);
+      expect(changeProjectName(name)).to.eql(expectedResult);
     });
   });
 });

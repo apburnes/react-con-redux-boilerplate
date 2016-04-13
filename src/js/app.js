@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route } from 'rrtr';
+import { Router, Route, browserHistory } from 'rrtr';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import createHistory from 'history/lib/createBrowserHistory';
 
 // Import the pages
 import HomePage from './components/pages/HomePage.react';
@@ -33,7 +32,7 @@ if (module.hot) {
 // which are all wrapped in the App component, which contains the navigation etc
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={createHistory()}>
+    <Router history={browserHistory}>
       <Route component={App}>
         <Route path="/" component={HomePage} />
         <Route path="/readme" component={ReadmePage} />

@@ -33,6 +33,40 @@ module.exports = function(options) {
         },
         inject: true
       }),
+      new HtmlWebpackPlugin({
+        template: 'index.html',
+        filename: '404.html',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true
+        },
+        inject: true
+      }),
+      new HtmlWebpackPlugin({
+        template: 'index.html',
+        filename: '200.html',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true
+        },
+        inject: true
+      }),
       new ExtractTextPlugin("css/main.css"),
       new webpack.DefinePlugin({
         "process.env": {
