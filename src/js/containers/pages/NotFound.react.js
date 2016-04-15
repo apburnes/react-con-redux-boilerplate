@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'rrtr';
+import { Link } from 'react-router';
 
 class NotFound extends Component {
   render() {

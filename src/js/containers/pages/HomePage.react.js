@@ -1,12 +1,7 @@
-/*
- * HomePage
- * This is the first thing users see of our App
- */
-
 import { asyncChangeProjectName, asyncChangeOwnerName } from '../../actions/AppActions';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'rrtr';
+import { Link } from 'react-router';
 
 class HomePage extends Component {
   render() {
