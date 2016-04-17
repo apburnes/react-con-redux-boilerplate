@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import homeReducer from '../src/js/reducers/homeReducer';
-import * as constants from '../src/js/constants/AppConstants';
+import homeReducer from '../src/client/reducers/homeReducer';
+import * as constants from '../src/client/constants/AppConstants';
 
 describe('defaultReducer', () => {
 

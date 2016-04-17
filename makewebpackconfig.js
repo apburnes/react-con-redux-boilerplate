@@ -8,7 +8,7 @@ module.exports = function(options) {
 
   if (options.prod) {
     entry = [
-      path.resolve(__dirname, 'src/js/app.js')
+      path.resolve(__dirname, 'src/client/app.js')
     ];
     cssLoaders = ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader');
     plugins = [
@@ -79,7 +79,7 @@ module.exports = function(options) {
     entry = [
       "webpack-dev-server/client?http://localhost:3000",
       "webpack/hot/only-dev-server",
-      path.resolve(__dirname, 'src/js/app.js')
+      path.resolve(__dirname, 'src/client/app.js')
     ];
     cssLoaders = 'style-loader!css-loader!postcss-loader';
     plugins = [

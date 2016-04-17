@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { changeOwnerName, changeProjectName } from '../src/js/actions/AppActions';
-import { CHANGE_OWNER_NAME, CHANGE_PROJECT_NAME } from '../src/js/constants/AppConstants';
+import { changeOwnerName, changeProjectName } from '../src/client/actions/AppActions';
+import { CHANGE_OWNER_NAME, CHANGE_PROJECT_NAME } from '../src/client/constants/AppConstants';
 
 describe('AppActions', () => {
   describe('changeOwnerName', () => {
