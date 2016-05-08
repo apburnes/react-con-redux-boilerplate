@@ -4,16 +4,13 @@
 
 /* 1. Vendors */
 @import 'vendor/*.css';
-@import '../../node_modules/basscss/css/basscss.min.css';
+@import '../../../node_modules/basscss/css/basscss.min.css';
 
 /* 2. Configuration and helpers */
 @import 'utils/*.css';
 
 /* 3. Base stuff */
 @import 'base/*.css';
-
-/* 4. Layout-related sections */
-@import 'layout/*.css';
 
 /* 5. Components */
 @import 'components/*.css';

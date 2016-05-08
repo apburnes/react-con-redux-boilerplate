@@ -5,7 +5,7 @@ import { Router, browserHistory } from 'react-router';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import '../css/main.css';
+import './css/main.css';
 import rootReducer from './reducers/rootReducer';
 import Routes from './routes';
 

@@ -1,0 +1,30 @@
+$text-font-stack: 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
+
+$white: #fff;
+$white-10: rgba(255,255,255,0.1);
+$white-25: rgba(255,255,255,0.25);
+$white-50: rgba(255,255,255,0.5);
+$white-75: rgba(255,255,255,0.75);
+
+$light-grey: #EDEDED;
+$mid-grey: #999;
+$dark-grey: rgb(10,10,10);
+$dark-grey-10: rgba(50,50,50,.1);
+$dark-grey-25: rgba(50,50,50,.25);
+$dark-grey-50: rgba(50,50,50,.50);
+$dark-grey-75: rgba(50,50,50,.75);
+
+$rose: #F6CAC9;
+$maroon: #964F4D;
+$light-blue: #91A7D0;
+
+$div-bg: $dark-grey-25;
+$div-radial-bg: radial-gradient(ellipse at center,  $dark-grey-25 0%,$dark-grey-75 100%);
+
+$text-dark: #000;
+$text-light: $white;
+
+$max-width: 968px;
+
+$med-border: 4px solid $dark-grey;

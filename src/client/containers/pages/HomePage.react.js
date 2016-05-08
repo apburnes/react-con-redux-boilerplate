@@ -1,36 +1,64 @@
-import { asyncChangeProjectName, asyncChangeOwnerName } from '../../actions/AppActions';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-class HomePage extends Component {
-  render() {
-    const dispatch = this.props.dispatch;
-    const { projectName, ownerName } = this.props.data;
+class GithubButton extends Component {
+  render () {
+    const { url, user, repo } = this.props;
+
     return (
       <div>
-        <h1>Hello World!</h1>
-        <h2>This is the demo for the <span className="home__text--red">{ projectName }</span> by <a href={'https://twitter.com/' + ownerName} >@{ ownerName }</a></h2>
-        <label className="home__label">Change to your project name:
-          <input className="home__input" type="text" onChange={(evt) => { dispatch(asyncChangeProjectName(evt.target.value)); }} value={projectName} />
-        </label>
-        <label className="home__label">Change to your name:
-          <input className="home__input" type="text" onChange={(evt) => { dispatch(asyncChangeOwnerName(evt.target.value)); }} value={ownerName} />
-        </label>
-        <Link className="btn" to="/readme">Setup</Link>
+        <a className='github-button'
+          href={url}
+          data-icon='octicon-star'
+          data-style='mega'
+          data-count-href={`/${user}/${repo}/stargazers`}
+          data-count-api={`/repos/${user}/${repo}#stargazers_count`}
+          data-count-aria-label='# stargazers on GitHub'
+          aria-label={`Star ${user}/${repo} on GitHub`}>Star</a>
       </div>
     );
   }
 }
 
-// REDUX STUFF
+GithubButton.propTypes = {
+  repo: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired
+};
 
-// Which props do we want to inject, given the global state?
+class HomePage extends Component {
+  render() {
+    const { projectInfo, dispatch } = this.props;
+    const { title, repo, user } = projectInfo;
+
+    return (
+      <div className='flex justify-center items-center' style={{height: '100vh'}}>
+        <div className='col col-4 mx-auto center'>
+          <h1>{title}</h1>
+          <GithubButton {...projectInfo} />
+        </div>
+      </div>
+    );
+  }
+}
+
+HomePage.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  projectInfo: PropTypes.shape({
+    repo: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    user: PropTypes.string.isRequired
+  }).isRequired
+};
+
 function select(state) {
+  const { projectInfo } = state;
+
   return {
-    data: state
+    projectInfo: projectInfo.toJS()
   };
 }
 
-// Wrap the component to inject dispatch and state into it
 export default connect(select)(HomePage);

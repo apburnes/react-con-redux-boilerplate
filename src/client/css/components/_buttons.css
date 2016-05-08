@@ -1,0 +1,7 @@
+.std-btn {
+  background-color: $white;
+  color: $dark-grey;
+  border: 10px solid $dark-grey;
+  border-radius: 0px;
+  margin: 10px  ;
+}
